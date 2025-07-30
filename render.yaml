@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: financeiro-frontend
+    env: static
+    staticPublishPath: dist/financeiro-frontend
