@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CredorService } from '../../services/credor.service';
@@ -14,7 +15,7 @@ import { ToastService } from '../../services/toast.service';
   templateUrl: './criar-credor.component.html',
   styleUrls: ['./criar-credor.component.css'],
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, HttpClientModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatSnackBarModule, HttpClientModule],
 })
 export class CriarCredorComponent {
   
@@ -30,6 +31,10 @@ export class CriarCredorComponent {
 
   voltar(): void {
     this.router.navigate(['/credores']);
+  }
+
+  voltarDashboard(): void {
+    this.router.navigate(['/dashboard']);
   }
   
   salvar(): void {

@@ -67,6 +67,10 @@ export class CredoresComponent implements AfterViewInit, OnInit {
     this.router.navigate(['/criarcredor']);
   }
 
+  voltarDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
   editarCredor(id: number): void {
     this.router.navigate(['/editarcredor', id]);
   }

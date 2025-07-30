@@ -9,11 +9,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { CriarCredorComponent } from './components/criar-credor/criar-credor.component';
 import { EditarCredorComponent } from './components/editar-credor/editar-credor.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +22,7 @@ import { EditarCredorComponent } from './components/editar-credor/editar-credor.
     AppRoutingModule,
     MatTableModule,
     MatButtonModule,
+    DashboardComponent,
     CredoresComponent,
     CriarCredorComponent,
     EditarCredorComponent

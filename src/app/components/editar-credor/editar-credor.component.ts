@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { CredorService } from '../../services/credor.service';
@@ -17,7 +18,7 @@ import { Credor } from '../../models/credor';
   templateUrl: './editar-credor.component.html',
   styleUrls: ['./editar-credor.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatSnackBarModule, HttpClientModule],
 })
 export class EditarCredorComponent implements OnInit {
   
@@ -68,6 +69,10 @@ export class EditarCredorComponent implements OnInit {
 
   voltar(): void {
     this.router.navigate(['/credores']);
+  }
+
+  voltarDashboard(): void {
+    this.router.navigate(['/dashboard']);
   }
 
   editar(): void {

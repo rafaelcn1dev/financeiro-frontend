@@ -1,5 +1,11 @@
 <div class="form-container">
-    <h1 class="page-title">Editar Credor</h1>
+    <div class="header-section">
+        <button mat-raised-button color="accent" class="back-button" (click)="voltarDashboard()">
+            <mat-icon>home</mat-icon>
+            Dashboard
+        </button>
+        <h1 class="page-title">Editar Credor</h1>
+    </div>
 
     <div *ngIf="carregando" class="loading-container">
         <p>Carregando dados do credor...</p>
