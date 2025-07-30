@@ -42,7 +42,11 @@
             <td mat-cell *matCellDef="let credor">
                 <div class="button-row">
                     <button mat-raised-button color="primary" (click)="editarCredor(credor.id)">Editar</button>
-                    <button mat-raised-button color="warn" (click)="excluirCredor(credor.id)">Excluir</button>
+                    <button mat-raised-button 
+                            [color]="credorParaExcluir === credor.id ? 'accent' : 'warn'" 
+                            (click)="excluirCredor(credor.id)">
+                        {{ credorParaExcluir === credor.id ? 'Confirmar?' : 'Excluir' }}
+                    </button>
                 </div>
             </td>
         </ng-container>
