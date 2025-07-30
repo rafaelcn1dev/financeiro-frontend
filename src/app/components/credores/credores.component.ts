@@ -1,11 +1,13 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { Credor } from 'src/app/models/credor';
 import { CredorService } from 'src/app/services/credor.service';
-import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './credores.component.html',
   styleUrls: ['./credores.component.css'],
   standalone: true,
-  imports: [MatTableModule, MatSortModule, HttpClientModule, MatButtonModule],
+  imports: [MatTableModule, MatSortModule, HttpClientModule, MatButtonModule, MatIconModule],
 })
 export class CredoresComponent implements AfterViewInit, OnInit {
   
@@ -22,7 +24,8 @@ export class CredoresComponent implements AfterViewInit, OnInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    private credorService: CredorService
+    private credorService: CredorService,
+    private router: Router
   ) { }
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -52,5 +55,9 @@ export class CredoresComponent implements AfterViewInit, OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  adicionarCredor(): void {
+    this.router.navigate(['/criarcredor']);
   }
 }
