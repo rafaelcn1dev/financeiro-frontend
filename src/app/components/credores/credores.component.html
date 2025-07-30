@@ -1,0 +1,47 @@
+<div class="table-container">
+    <h1 class="page-title">Gerenciamento de Credores</h1>
+    
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+        class="mat-elevation-z8">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ID">
+                ID
+            </th>
+            <td mat-cell *matCellDef="let credor"> {{credor.id}} </td>
+        </ng-container>
+
+        <!-- Nome Column -->
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+                Nome
+            </th>
+            <td mat-cell *matCellDef="let credor"> {{credor.nome}} </td>
+        </ng-container>
+
+        <!-- Dia Vencimento Column -->
+        <ng-container matColumnDef="diaDeVencimento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by due date">
+                Dia Vencimento
+            </th>
+            <td mat-cell *matCellDef="let credor"> {{credor.diaDeVencimento}} </td>
+        </ng-container>
+
+        <!-- Ação Column -->
+        <ng-container matColumnDef="acao">
+            <th mat-header-cell *matHeaderCellDef>
+                Ação
+            </th>
+            <td mat-cell *matCellDef="let credor">
+                <div class="button-row">
+                    <button mat-raised-button color="primary">Editar</button>
+                    <button mat-raised-button color="warn">Excluir</button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
