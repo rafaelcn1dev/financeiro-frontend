@@ -1,15 +1,20 @@
-<form class="form">
-    <mat-form-field class="full-width">
-        <mat-label>Nome do credor</mat-label>
-        <input matInput placeholder="Ex. Cartão C6">
-    </mat-form-field>
+<div class="form-container">
+    <h1 class="page-title">Criar Novo Credor</h1>
+    
+    <form class="form">
+        <mat-form-field class="full-width">
+            <mat-label>Nome do credor</mat-label>
+            <input matInput placeholder="Ex. Cartão C6" [(ngModel)]="nome" name="nome" required>
+        </mat-form-field>
 
-    <mat-form-field class="full-width">
-        <mat-label>Dia de Vencimento</mat-label>
-        <input type="number" min="1" max="31" matInput placeholder="Ex. 10" value="10">
-    </mat-form-field>
-    <div class="button-row">
-        <button mat-raised-button color="primary">Salvar</button>
-        <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
-    </div>
-</form>
+        <mat-form-field class="full-width">
+            <mat-label>Dia de Vencimento</mat-label>
+            <input type="number" min="1" max="31" matInput placeholder="Ex. 10" [(ngModel)]="diaDeVencimento" name="diaDeVencimento" required>
+        </mat-form-field>
+        
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+            <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        </div>
+    </form>
+</div>
