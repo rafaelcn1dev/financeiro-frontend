@@ -56,17 +56,6 @@ export class CredorService {
   }
 
   /**
-   * Atualiza parcialmente um credor
-   * @param id - ID do credor a ser atualizado
-   * @param credorParcial - Dados parciais do credor
-   * @returns Observable<Credor>
-   */
-  editarCredorParcial(id: number, credorParcial: Partial<Omit<Credor, 'id'>>): Observable<Credor> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.patch<Credor>(url, credorParcial, this.httpOptions);
-  }
-
-  /**
    * Exclui um credor
    * @param id - ID do credor a ser excluído
    * @returns Observable<void>

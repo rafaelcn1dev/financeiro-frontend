@@ -1,0 +1,25 @@
+<div class="form-container">
+    <h1 class="page-title">Editar Credor</h1>
+
+    <div *ngIf="carregando" class="loading-container">
+        <p>Carregando dados do credor...</p>
+    </div>
+
+    <form class="form" *ngIf="!carregando">
+        <mat-form-field class="full-width">
+            <mat-label>Nome do credor</mat-label>
+            <input matInput placeholder="Ex. Cartão C6" [(ngModel)]="nome" name="nome" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Dia de Vencimento</mat-label>
+            <input type="number" min="1" max="31" matInput placeholder="Ex. 10" [(ngModel)]="diaDeVencimento"
+                name="diaDeVencimento" required>
+        </mat-form-field>
+
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="editar()">Salvar Alterações</button>
+            <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        </div>
+    </form>
+</div>

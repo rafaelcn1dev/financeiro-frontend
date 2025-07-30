@@ -5,9 +5,11 @@ import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { Credor } from 'src/app/models/credor';
 import { CredorService } from 'src/app/services/credor.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -15,7 +17,7 @@ import { CredorService } from 'src/app/services/credor.service';
   templateUrl: './credores.component.html',
   styleUrls: ['./credores.component.css'],
   standalone: true,
-  imports: [MatTableModule, MatSortModule, HttpClientModule, MatButtonModule, MatIconModule],
+  imports: [MatTableModule, MatSortModule, HttpClientModule, MatButtonModule, MatIconModule, MatSnackBarModule],
 })
 export class CredoresComponent implements AfterViewInit, OnInit {
   
@@ -25,7 +27,8 @@ export class CredoresComponent implements AfterViewInit, OnInit {
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
     private credorService: CredorService,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) { }
 
   @ViewChild(MatSort) sort!: MatSort;
@@ -44,6 +47,7 @@ export class CredoresComponent implements AfterViewInit, OnInit {
         this.dataSource.data = credores;
       },
       error: (error: any) => {
+        this.toastService.showError('Erro ao carregar credores');
         console.error('Erro ao carregar credores:', error);
       }
     });
@@ -59,5 +63,24 @@ export class CredoresComponent implements AfterViewInit, OnInit {
 
   adicionarCredor(): void {
     this.router.navigate(['/criarcredor']);
+  }
+
+  editarCredor(id: number): void {
+    this.router.navigate(['/editarcredor', id]);
+  }
+
+  excluirCredor(id: number): void {
+    if (confirm('Tem certeza que deseja excluir este credor?')) {
+      this.credorService.excluirCredor(id).subscribe({
+        next: () => {
+          this.toastService.showSuccess('Credor excluído com sucesso!');
+          this.carregarCredores(); // Recarrega a lista
+        },
+        error: (error: any) => {
+          this.toastService.showError('Erro ao excluir credor');
+          console.error('Erro ao excluir credor:', error);
+        }
+      });
+    }
   }
 }
