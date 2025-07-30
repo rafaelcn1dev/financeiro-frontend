@@ -7,6 +7,7 @@ import { CredoresComponent } from './components/credores/credores.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { CriarCredorComponent } from './components/criar-credor/criar-credor.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     MatTableModule,
     MatButtonModule,
-    CredoresComponent
+    CredoresComponent,
+    CriarCredorComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
