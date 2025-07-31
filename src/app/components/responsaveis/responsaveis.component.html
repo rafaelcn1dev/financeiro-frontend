@@ -1,0 +1,52 @@
+<div class="table-container">
+    <div class="header-section">
+        <button mat-raised-button color="accent" class="back-button" (click)="voltarDashboard()">
+            <mat-icon>home</mat-icon>
+            Dashboard
+        </button>
+        <h1 class="page-title">Gerenciamento de Responsaveis</h1>
+        <button mat-raised-button color="primary" class="add-button" (click)="adicionarResponsavel()">
+            <mat-icon>add</mat-icon>
+            Adicionar Responsavel
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+        class="mat-elevation-z8">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ID">
+                ID
+            </th>
+            <td mat-cell *matCellDef="let responsavel"> {{responsavel.id}} </td>
+        </ng-container>
+
+        <!-- Nome Column -->
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+                Nome
+            </th>
+            <td mat-cell *matCellDef="let responsavel"> {{responsavel.nome}} </td>
+        </ng-container>
+
+        <!-- Ação Column -->
+        <ng-container matColumnDef="acao">
+            <th mat-header-cell *matHeaderCellDef>
+                Ação
+            </th>
+            <td mat-cell *matCellDef="let responsavel">
+                <div class="button-row">
+                    <button mat-raised-button color="primary" (click)="editarResponsavel(responsavel.id)">Editar</button>
+                    <button mat-raised-button [color]="responsavelParaExcluir === responsavel.id ? 'accent' : 'warn'"
+                        (click)="excluirResponsavel(responsavel.id)">
+                        {{ responsavelParaExcluir === responsavel.id ? 'Confirmar?' : 'Excluir' }}
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

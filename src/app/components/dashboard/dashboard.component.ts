@@ -23,4 +23,12 @@ export class DashboardComponent {
   navegarParaCriarCredor(): void {
     this.router.navigate(['/criarcredor']);
   }
+
+  navegarParaResponsaveis(): void {
+    this.router.navigate(['/responsaveis']);
+  }
+
+  navegarParaCriarResponsavel(): void {
+    this.router.navigate(['/criarresponsavel']);
+  }
 }

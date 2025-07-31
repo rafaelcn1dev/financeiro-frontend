@@ -1,0 +1,165 @@
+/* Container principal para centralizar o conteúdo */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container da tabela */
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Header com título e botão */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Botão de voltar */
+.back-button {
+    order: -1;
+}
+
+/* Título da página */
+.page-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+    text-align: center;
+}
+
+/* Botão adicionar */
+.add-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 160px;
+    height: 40px;
+    background-color: #1976d2 !important;
+    color: white !important;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #1565c0 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.add-button mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+/* Centralizar conteúdo das células */
+td,
+th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Ajustar primeira coluna (ID) para ser menor */
+.mat-column-id {
+    flex: 0 0 80px;
+    text-align: center;
+}
+
+/* Expandir coluna do nome */
+.mat-column-nome {
+    flex: 1 1 auto;
+    text-align: left;
+    padding-left: 16px;
+}
+
+/* Centralizar coluna dia vencimento */
+.mat-column-diaDeVencimento {
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+/* Centralizar coluna de ações */
+.mat-column-acao {
+    flex: 0 0 200px;
+    text-align: center;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button-row .mat-mdc-button-base {
+    margin: 0;
+    min-width: 80px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    :host {
+        padding: 10px;
+    }
+
+    .table-container {
+        padding: 15px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .header-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .page-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .add-button {
+        width: 100%;
+        justify-content: center;
+        min-width: auto;
+    }
+
+    .button-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .button-row .mat-mdc-button-base {
+        min-width: auto;
+        width: 100%;
+    }
+}

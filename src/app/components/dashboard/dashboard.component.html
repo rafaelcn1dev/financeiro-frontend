@@ -5,6 +5,7 @@
   </div>
 
   <div class="cards-container">
+    <!-- Primeira linha - Credores -->
     <mat-card class="dashboard-card credores-card">
       <mat-card-header>
         <mat-icon mat-card-avatar class="card-icon">people</mat-icon>
@@ -39,6 +40,45 @@
         <button mat-raised-button color="accent" class="action-button" (click)="navegarParaCriarCredor()">
           <mat-icon>add</mat-icon>
           Inserir Credor
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Segunda linha - Responsáveis -->
+    <mat-card class="dashboard-card responsaveis-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="card-icon">supervisor_account</mat-icon>
+        <mat-card-title>Responsáveis</mat-card-title>
+        <mat-card-subtitle>Gerencie seus responsáveis</mat-card-subtitle>
+      </mat-card-header>
+    
+      <mat-card-content>
+        <p>Visualize, edite e gerencie todos os seus responsáveis de forma organizada.</p>
+      </mat-card-content>
+    
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="action-button" (click)="navegarParaResponsaveis()">
+          <mat-icon>list</mat-icon>
+          Listar Responsáveis
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="dashboard-card novo-responsavel-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="card-icon">person_add</mat-icon>
+        <mat-card-title>Novo Responsável</mat-card-title>
+        <mat-card-subtitle>Adicione um novo responsável</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>Cadastre rapidamente um novo responsável no seu sistema financeiro.</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="accent" class="action-button" (click)="navegarParaCriarResponsavel()">
+          <mat-icon>add</mat-icon>
+          Inserir Responsável
         </button>
       </mat-card-actions>
     </mat-card>

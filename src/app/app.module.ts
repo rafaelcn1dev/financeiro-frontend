@@ -10,11 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { CriarCredorComponent } from './components/criar-credor/criar-credor.component';
 import { EditarCredorComponent } from './components/editar-credor/editar-credor.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ResponsaveisComponent } from './components/responsaveis/responsaveis.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     DashboardComponent,
     CredoresComponent,
     CriarCredorComponent,
-    EditarCredorComponent
+    EditarCredorComponent,
+    ResponsaveisComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

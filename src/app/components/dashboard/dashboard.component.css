@@ -34,7 +34,7 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -61,6 +61,14 @@
   border-top: 4px solid #ff4081;
 }
 
+.responsaveis-card {
+  border-top: 4px solid #4caf50;
+}
+
+.novo-responsavel-card {
+  border-top: 4px solid #ff9800;
+}
+
 .card-icon {
   background: linear-gradient(45deg, #3f51b5, #2196f3);
   color: white !important;
@@ -75,6 +83,14 @@
 
 .novo-credor-card .card-icon {
   background: linear-gradient(45deg, #ff4081, #e91e63);
+}
+
+.responsaveis-card .card-icon {
+  background: linear-gradient(45deg, #4caf50, #2e7d32);
+}
+
+.novo-responsavel-card .card-icon {
+  background: linear-gradient(45deg, #ff9800, #f57c00);
 }
 
 .action-button {
