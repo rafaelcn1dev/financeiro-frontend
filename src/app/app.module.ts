@@ -12,6 +12,7 @@ import { EditarCredorComponent } from './components/editar-credor/editar-credor.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResponsaveisComponent } from './components/responsaveis/responsaveis.component';
 import { CriarResponsavelComponent } from './components/criar-responsavel/criar-responsavel.component';
+import { EditarResponsavelComponent } from './components/editar-responsavel/editar-responsavel.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CriarResponsavelComponent } from './components/criar-responsavel/criar-
     CriarCredorComponent,
     EditarCredorComponent,
     ResponsaveisComponent,
-    CriarResponsavelComponent
+    CriarResponsavelComponent,
+    EditarResponsavelComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

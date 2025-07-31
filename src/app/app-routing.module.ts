@@ -6,6 +6,7 @@ import { CriarCredorComponent } from './components/criar-credor/criar-credor.com
 import { EditarCredorComponent } from './components/editar-credor/editar-credor.component';
 import { ResponsaveisComponent } from './components/responsaveis/responsaveis.component';
 import { CriarResponsavelComponent } from './components/criar-responsavel/criar-responsavel.component';
+import { EditarResponsavelComponent } from './components/editar-responsavel/editar-responsavel.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'editarcredor/:id', component: EditarCredorComponent },
     { path: 'responsaveis', component: ResponsaveisComponent },
     { path: 'criarresponsavel', component: CriarResponsavelComponent },
+    { path: 'editarresponsavel/:id', component: EditarResponsavelComponent },
 ];
 
 @NgModule({

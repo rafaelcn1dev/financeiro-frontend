@@ -1,0 +1,21 @@
+<div class="form-container">
+    <div class="header-section">
+        <button mat-raised-button color="accent" class="back-button" (click)="voltarDashboard()">
+            <mat-icon>home</mat-icon>
+            Dashboard
+        </button>
+        <h1 class="page-title">Editar Responsável</h1>
+    </div>
+
+    <form class="form">
+        <mat-form-field class="full-width">
+            <mat-label>Nome do responsável</mat-label>
+            <input matInput placeholder="Ex. Fulano de Tal" [(ngModel)]="nome" name="nome" required>
+        </mat-form-field>
+
+        <div class="button-row">
+            <button mat-raised-button color="primary" (click)="editar()">Editar</button>
+            <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+        </div>
+    </form>
+</div>
