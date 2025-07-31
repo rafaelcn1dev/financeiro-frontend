@@ -1,0 +1,103 @@
+/* Container principal para centralizar o conteúdo */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container do formulário */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Título da página */
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Espaçamento entre campos */
+.form .mat-mdc-form-field {
+    margin-bottom: 16px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 16px;
+}
+
+.button-row .mat-mdc-button-base {
+    margin: 0;
+    min-width: 120px;
+    padding: 8px 24px;
+}
+
+/* Botão primário */
+.button-row .mat-mdc-raised-button.mat-primary {
+    background-color: #1976d2;
+}
+
+/* Botão secundário */
+.button-row .mat-mdc-raised-button.mat-warn {
+    background-color: #f44336;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    :host {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 20px;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+    }
+
+    .page-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        max-width: none;
+    }
+
+    .button-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .button-row .mat-mdc-button-base {
+        min-width: auto;
+        width: 100%;
+    }
+}
